@@ -1,6 +1,7 @@
 # Touch Input Display Driver for Android 
 
 Android Things have been deprecated. My motivation behind trying to revive this project was that I wanted to run Android on RaspberryPi with a 3.5" GPIO display that had touch support.
+
 However, due to my limited knowledge of Android development, although I got to get the Gradle build to pass and the Activity to display, the Android service that is supposed to run on the background that uses SPI library which enables touch doesn't work. 
 This could be because I commented out a lot of code related to maven because I didn't understand how to use it. (Looks like jitpack.io is the way to go)
 
@@ -33,15 +34,18 @@ Removing /boot/resolution.txt will use the preferred resolution of your display
 - 5"
   - https://www.amazon.com/UCTRONICS-Raspberry-Portable-Capacitive-Touchscreen/dp/B07VV7RL7Y
 
-Additional Resources:
+## Additional Resources:
  - https://raspberrytips.com/android-raspberry-pi-4/
  - https://gist.github.com/talhashraf/bda3b35e98597e545103
  - https://docs.gradle.org/current/samples/sample_building_android_apps.html
  - https://github.com/android/app-bundle-samples/blob/main/InstantApps/service/app/src/main/AndroidManifest.xml
 
----
-Below are Notes from Original Author
-## Usage
+
+--- 
+<br>
+<br>
+
+## Below are Notes from Original Author
 ### Prerequisites (Not sure if this is required)
 Before using the driver you need to make sure you have the Input Device Confguration file (.idc) installed on your Android things device. To do so mount the SD card of your Android Things device and in the root partition under `/system/usr/idc/` you should copy the AndroidTouchInputDriver.idc file that is available in the root of this project. If you do not copy that file the driver will work but Android will think that the driver is a physical mouse, which obviously results in totally different behaviour.
 ### Gradle
@@ -62,6 +66,7 @@ If you cannot extend your `Application` from the `TouchScreenDriverApplication` 
 ### Custom Drivers
 Adding a custom driver is really simple. The hardest part in a custom driver is knowing how to read from your touch input display.
 Eg: https://github.com/dirkvranckaert/touchinputdisplaydriver/pull/12/files
+
 To implement the driver in the library you should extend the `eu.vranckaert.driver.touch.driver.Driver` class or the `eu.vranckaert.driver.touch.driver.SpiDriver` class in case your touch input display is SPI compatible. If your touch input display uses the XPT2046 touch controller you can even directly extend the `eu.vranckaert.driver.touch.driver.XPT2046Driver` class. It's the driver class that will contain the reading/writing logic for your touch display.
 
 Next you need a `eu.vranckaert.driver.touch.profile.DriverProfile` which needs a `Vendor` (or `Vendor.UNKNOWN` in case your vendor is not yet listed), and a `ScreenDimension` specifying the width, height and screen ratio. The `Ratio` is an enum with fixed ratio values, or again a `Ratio.UNKNOWN` if the ratio is not yet listed.
