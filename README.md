@@ -3,7 +3,8 @@
 Android Things have been deprecated. My motivation behind trying to revive this project was that I wanted to run Android on RaspberryPi with a 3.5" GPIO display that had touch support.
 
 However, due to my limited knowledge of Android development, although I got to get the Gradle build to pass and the Activity to display, the Android service that is supposed to run on the background that uses SPI library which enables touch doesn't work. 
-This could be because I commented out a lot of code related to maven because I didn't understand how to use it. (Looks like jitpack.io is the way to go)
+This could be because I commented out a lot of code related to maven because I didn't understand how to use it. (Looks like jitpack.io is the way to go).
+I got the apk to be exported for `demo` service but not `touch` service. That could also be an another reason why it didn't work.
 
 Anyway, I found that I can buy 3.5", 4.3" and 5" displays that has touch support with HDMI and USB which will satisfy my need.
 So, I'm going to leave this code so that maybe someone in the future would still be able to make it work for GPIO displays.
