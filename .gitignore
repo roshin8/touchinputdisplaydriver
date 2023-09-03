@@ -11,12 +11,15 @@
 # Generated files
 bin/
 gen/
+android.lock
 out/
 .idea/
 
 # Gradle files
 .gradle/
-build/
+/build/tmp
+/build/intermediates
+/build/generated
 
 # Local configuration file (sdk path, etc)
 local.properties

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="eu.vranckaert.driver.touch.demo">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-    <application
-        android:name=".ThingsApplication">
-        <uses-library android:name="com.google.android.things" />
+    <application>
+
+        <!--        <uses-library android:name="com.google.android"  android:required="true"/>-->
 
         <activity
             android:name=".SplashActivity"
-            android:theme="@style/AppThemeFullscreen">
+            android:theme="@style/AppThemeFullscreen"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,7 +28,12 @@
 
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppThemeFullscreen" />
+            android:theme="@style/AppThemeFullscreen"
+            android:exported="true" />
+
+        <activity
+            android:name=".ThingsApplication"
+            android:exported="true" />
     </application>
 
 </manifest>

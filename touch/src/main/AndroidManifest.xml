@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="eu.vranckaert.driver.touch">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="com.google.android.things.permission.MANAGE_INPUT_DRIVERS" />
     <uses-permission android:name="com.google.android.things.permission.USE_PERIPHERAL_IO" />
 
     <application>
-        <uses-library android:name="com.google.android.things" />
+        <uses-library android:name="com.google.android.things"  android:required="false" />
 
         <service android:name=".TouchScreenDriverService" />
+        <activity android:name=".TouchScreenDriverService"
+            android:theme="@android:style/Theme.NoDisplay"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+<!--        <activity-->
+<!--            android:name=".MainMenu"-->
+<!--            android:label="@string/title_activity_main" >-->
+        </activity>
     </application>
+
 
 </manifest>

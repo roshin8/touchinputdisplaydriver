@@ -1,19 +1,19 @@
-apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.jfrog.bintray'
+plugins {
+    id('com.android.library') version '8.1.0'
+//    id('com.github.dcendents.android-maven')
+//    id('com.jfrog.bintray')
+}
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion '27.0.3'
-
+    compileSdkVersion 30
 
     defaultConfig {
         minSdkVersion 24
-        targetSdkVersion 26
+        targetSdkVersion 30
         versionCode 1
         versionName "1.1"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
 
     }
 
@@ -23,14 +23,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    namespace 'eu.vranckaert.driver.touch'
 
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation('com.android.support.test.espresso:espresso-core:3.0.1', {
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     implementation 'com.google.android.things:androidthings:+'
@@ -60,7 +61,7 @@ dependencies {
 
 task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
-    classifier = 'sources'
+    archiveClassifier = 'sources'
 }
 
 task javadoc(type: Javadoc) {
@@ -69,7 +70,7 @@ task javadoc(type: Javadoc) {
 }
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
+    archiveClassifier = 'javadoc'
     from javadoc.destinationDir
 }
 artifacts {
@@ -112,28 +113,28 @@ project.version = "1.1.0"
 //}
 
 // https://github.com/bintray/gradle-bintray-plugin
-bintray {
-    user = properties.getProperty("bintray.user")
-    key = properties.getProperty("bintray.apikey")
-
-    configurations = ['archives']
-    pkg {
-        repo = "maven"
-        // it is the name that appears in bintray when logged
-        name = "TouchScreenDriver"
-        websiteUrl = siteUrl
-        vcsUrl = gitUrl
-        licenses = ["GPL-3.0"]
-        publish = true
-        version {
-            name = project.version
-            desc = 'Touch input display driver for Android Touch'
-            released  = new Date()
-            vcsTag = project.version
-            gpg {
-                sign = true //Determines whether to GPG sign the files. The default is false
-                passphrase = properties.getProperty("bintray.gpg.passphrase")
-            }
-        }
-    }
-}
+//bintray {
+//    user = properties.getProperty("bintray.user")
+//    key = properties.getProperty("bintray.apikey")
+//
+//    configurations = ['archives']
+//    pkg {
+//        repo = "maven"
+//        // it is the name that appears in bintray when logged
+//        name = "TouchScreenDriver"
+//        websiteUrl = siteUrl
+//        vcsUrl = gitUrl
+//        licenses = ["GPL-3.0"]
+//        publish = true
+//        version {
+//            name = project.version
+//            desc = 'Touch input display driver for Android Touch'
+//            released  = new Date()
+//            vcsTag = project.version
+//            gpg {
+//                sign = true //Determines whether to GPG sign the files. The default is false
+//                passphrase = properties.getProperty("bintray.gpg.passphrase")
+//            }
+//        }
+//    }
+//}
