@@ -24,6 +24,7 @@ Removing /boot/resolution.txt will use the preferred resolution of your display
 
 ## Displays with USB Touch Port
 - 3.5"
+  - https://www.amazon.com/gp/product/B0BWK8Q4KC/
   - https://www.amazon.com/DIYmalls-Display-Resistive-Touchscreen-Raspberry/dp/B0BFF163RR
   - https://www.amazon.com/Coolwell-Touchscreen-Raspberry-Adjustable-Brightness/dp/B0BV2FRPJ8
   - https://www.amazon.com/TUOPUONE-Capacitive-Compatible-Resolution-Adjustable/dp/B0CFDSHZVR/
