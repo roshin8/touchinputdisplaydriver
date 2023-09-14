@@ -28,7 +28,6 @@ Removing /boot/resolution.txt will use the preferred resolution of your display
   - https://www.amazon.com/DIYmalls-Display-Resistive-Touchscreen-Raspberry/dp/B0BFF163RR
   - https://www.amazon.com/Coolwell-Touchscreen-Raspberry-Adjustable-Brightness/dp/B0BV2FRPJ8
   - https://www.amazon.com/TUOPUONE-Capacitive-Compatible-Resolution-Adjustable/dp/B0CFDSHZVR/
-  - https://www.amazon.com/OSOYOO-3-5inch-Display-Protective-Raspberry/dp/B085TC5YMR  (Maybe)
   - https://www.amazon.com/Capacitive-Viewing-Integrated-Raspberry-Computers/dp/B0BJ78JYYN (Maybe)
 - 4.3"
   - https://www.amazon.com/4-3inch-HDMI-LCD-IPS-Capacitive/dp/B0852NW9FM/
